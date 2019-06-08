@@ -5,8 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>First Project Music </title>
+     <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
 </head>
 <body>
-    
+<h1>Hello</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">   
+
+var APIKey = "db10034925mshfb3fc2f83f68e36p1695dbjsn72d700519964";
+var queryURL = "Soundcloudstefan-skliarovV1.p.rapidapi.com";
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  });
+
+</script>
+    <!-- Main Bootstrap Search -->
+  <div class="container">
+
+      <!-- Jumbotron for Title -->
+      <div class="jumbotron" style="background-color: #20315A ; color: white;">
+        <h1 class="text-center">
+          <strong>
+            <i class="fa fa-newspaper-o"></i> New York Times Search</strong>
+        </h1>
+      </div>
+  
+      <!-- Row for Searching New York Times -->
+      <div class="row">
+        <div class="col-sm-12">
+          <br>
+          <!-- First card is for handling the search parameters -->
+          <div class="card">
+            <div class="card-header">
+              <strong>
+                <i class="fa fa-list-alt"></i> Search Parameters</strong>
+            </div>
+            <div class="card-body">
+  
+              <!-- Here we create an HTML Form for handling the inputs-->
+              <form role="form">
+  
+                <!-- Here we create the text box for capturing the search term-->
+                <div class="form-group">
+                  <label for="search">Search Term:</label>
+                  <input type="text" class="form-control" id="search-term">
+                </div>
+
+                <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-default" id="run-search">
+                  <i class="fa fa-search"></i> Search</button>
+                <button class="btn btn-default" id="clear-all">
+                  <i class="fa fa-trash"></i> Clear Results</button>
+
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
 </body>
 </html>
