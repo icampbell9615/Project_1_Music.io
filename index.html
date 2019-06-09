@@ -13,112 +13,116 @@
 
 </head>
 <body>
+
+  <!-- Artist Select Box -->
+  <form id="artist-form">
+
+      <!-- Label for Text Box -->
+      <label for="artist-input">Choose Your Artist</label>
+  
+      <!-- Text Input Box -->
+      <input type="text" id="artist-input"><br>
+  
+      <!-- Submit Button -->
+      <input id="select-artist" type="submit" value="GO!">
+    </form>
+  
+    <!-- Artist Information -->
+    <div id="artist-div"></div>
+</body>  
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">   
 
 //var APIKey = "db10034925mshfb3fc2f83f68e36p1695dbjsn72d700519964";
-var queryURL = "http://ws.audioscrobbler.com/2.0/";
+//var userArtist = tupac
+function userArtist(userArtist) {
+var queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + userArtist + "&api_key=6bd260e771ce2f1a6e020fe365f4537c&format=json";
 
 $.ajax({
-    url: queryURL,
-    method: "GET"
+  url: queryURL,
+  method: "GET"
+})
+  .then(function(response) {
+
+console.log(response);
+
+// Constructing HTML containing the artist information
+var userArtistName = $("<h1>").text(response.name);
+      var userArtistURL = $("<a>").attr("href", response.url).append(userArtistName);
+      var userArtistImage = $("<img>").attr("src", response.thumb_url);
+      var userArtistCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
+      var trackerCount = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+      var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+
+      // Empty the contents of the artist-div, append the new artist content
+      $("#artist-div").empty();
+      $("#artist-div").append(userArtistURL, userArtistImage, trackerCount, upcomingEvents, goToArtist);
+    });
+
+    // Event handler for user clicking the select-artist button
+  $("#select-artist").on("click", function(event) {
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // Storing the artist name
+    var inputArtist = $("#artist-input").val().trim();
+
+    // Running the searchBandsInTown function(passing in the artist as an argument)
+    searchBandsInTown(inputArtist);
   });
 
-function buildQueryURL() {
+    
+}
+    
+
+//function buildQueryURL() {
+
+
+
 
   // Begin building an object to contain our API call's query parameters
   // Set the API key
-  var queryParams = { "api-key": "23199c6a968e678fdfc597d3ec7dc65a" };
+  //var queryParams = { "api-key": "23199c6a968e678fdfc597d3ec7dc65a" };
 
   // Grab text the user typed into the search input, add to the queryParams object
-  queryParams.q = $("#search-term")
-    .val()
-    .trim();
+  //queryParams.q = $("#search-term")
+  //  .val()
+  //  .trim();
 
   
   //// Logging the URL so we have access to it for troubleshooting
-  console.log("---------------\nURL: " + queryURL + "\n---------------");
-  console.log(queryURL + $.param(queryParams));
-  return queryURL + $.param(queryParams);
-}
+ // console.log("---------------\nURL: " + queryURL + "\n---------------");
+  //console.log(queryURL + $.param(queryParams));
+  //return queryURL + $.param(queryParams);
+//}
 
 
 // CLICK HANDLERS
 // ==========================================================
 
 // .on("click") function associated with the Search Button
-$("#run-search").on("click", function(event) {
+//$("#run-search").on("click", function(event) {
   // This line allows us to take advantage of the HTML "submit" property
   // This way we can hit enter on the keyboard and it registers the search
   // (in addition to clicks). Prevents the page from reloading on form submit.
-  event.preventDefault();
+ // event.preventDefault();
 
   // Empty the region associated with the articles
-  clear();
+  //clear();
 
   // Build the query URL for the ajax request to the NYT API
-  var queryURL = buildQueryURL();
+  //var queryURL = buildQueryURL();
 
   // Make the AJAX request to the API - GETs the JSON data at the queryURL.
   // The data then gets passed as an argument to the updatePage function
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(updatePage);
-});
+  //$.ajax({
+  //  url: queryURL,
+  //  method: "GET"
+  //}).then(updatePage);
+//});
 
 //  .on("click") function associated with the clear button
-$("#clear-all").on("click", clear);
+//$("#clear-all").on("click", clear);
 
 </script>
-
-
-
-
-
-
-    <!-- Main Bootstrap Search -->
-  <div class="container">
-
-      <!-- Jumbotron for Title -->
-      <div class="jumbotron" style="background-color: #20315A ; color: white;">
-        <h1 class="text-center">
-          <strong>
-            <i class="fa fa-newspaper-o"></i> New York Times Search</strong>
-        </h1>
-      </div>
-  
-      <!-- Row for Searching New York Times -->
-      <div class="row">
-        <div class="col-sm-12">
-          <br>
-          <!-- First card is for handling the search parameters -->
-          <div class="card">
-            <div class="card-header">
-              <strong>
-                <i class="fa fa-list-alt"></i> Search Parameters</strong>
-            </div>
-            <div class="card-body">
-  
-              <!-- Here we create an HTML Form for handling the inputs-->
-              <form role="form">
-  
-                <!-- Here we create the text box for capturing the search term-->
-                <div class="form-group">
-                  <label for="search">Search Term:</label>
-                  <input type="text" class="form-control" id="search-term">
-                </div>
-
-                <!-- Here we have our final submit button -->
-              <button type="submit" class="btn btn-default" id="run-search">
-                  <i class="fa fa-search"></i> Search</button>
-                <button class="btn btn-default" id="clear-all">
-                  <i class="fa fa-trash"></i> Clear Results</button>
-
-  </form>
-  </div>
-  </div>
-  </div>
-  </div>
-</body>
 </html>
