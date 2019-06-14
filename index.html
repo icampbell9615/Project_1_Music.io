@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>First Project Music</title>
 
+  <!--Link to CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
   <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
@@ -13,33 +16,57 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 </head>
 <body>
-      <body class="text-center">
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <h1 class="cover-heading">New Music!</h1>
+          <!--Row For Searching-->
+          <div class="row">
+          <div class="col-centered">
+          
+          <br>
 
-        <!-- Artist Select Box -->
-        <form id="artist-form">
+           <!--Data Card Bootstrap-->
+            <div class="card">
+            <div class="card-header">
+              <strong>
+                <i class="fa fa-search"></i>Find New Music</strong>
+            </div>
+            <div class="card-body">
+              
+            <!-- Form to handle inputs -->
+            <form id="artist-form">
 
-        <!-- Label for Text Box -->
-        <label for="artist-input"></label>
-    
-        <!-- Text Input Box -->
-        <input type="text" id="artist-input"><br>
-    
-        <!-- Submit Button -->
-        <input id="select-artist" type="submit" value="Search">
-        </form>
-    
-        <!-- Artist Information -->
-        <div id="artist-div"></div>
+            <!-- Label for Text Box -->
+            <div class="form-group">
+            <label for="artist-input"></label>
+            
+            <!-- Text Input Box -->
+            <input type="text" id="artist-input"><br>
+        
+            <!-- Submit Button -->
+            <input id="select-artist" type="submit" value="Search">
+            </form>
+          
+            <!-- Artist Information -->
+            <div id="artist-div"></div>
+                </div> 
 
-
+         
+     
+        </div>
+        </div>
+        </div>
+        
 
 
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <!-- Code to the JavaScript File -->
+  <!-- Link to Javascript -->
   <script src="assets/javascript/script.js"></script>
+  <script type="text/javascript">
+    var cardDiv = $("<div>");
+    var 
+
+
+
+  </script>
 </body>
 </html>
