@@ -54,11 +54,30 @@
             <!-- Results -->
         <div class="card-header">
             <strong>
-              <i class="fa fa-table"></i> Results</strong>
+              <i class="fa fa-table"></i> Lyrics</strong>
           </div>
+
 
           <!-- This main card will hold each of the resulting articles -->
           <div class="card-body" id="article-section">
+          </div>
+
+          <div class="container" id="input-container">
+            <form>
+              <div class="form-group">
+                <label for="artist"></label>
+                <input type="text" class="form-control" id="artist" placeholder="Artist">
+              </div>
+              <div class="form-group">
+                <label for="song"></label>
+                <input type="text" class="form-control" id="artist" placeholder="Song">
+              </div>
+              <button type="submit" id="search-lyrics" class="btn btn-primary">
+                Submit
+              </button>
+
+            
+            </form>
           </div>
         
 
@@ -67,7 +86,8 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Link to Javascript -->
-  <script src="assets/javascript/script.js"></script>
+  <!-- <script src="assets/javascript/script.js"></script> -->
+  <script src="assets/javascript/scriptTwo.js"></script>
   <script type="text/javascript">
     var cardDiv = $("<div>");
     var 

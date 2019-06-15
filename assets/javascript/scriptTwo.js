@@ -1,8 +1,19 @@
-function userArtist(userArtist){
-    var APIKey = "6bd260e771ce2f1a6e020fe365f4537c";
-    var queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + userArtist + "&api_key=6bd260e771ce2f1a6e020fe365f4537c&format=json";
-    
-    
+var inputArtist = $("#artist").val();
+var inputSong = $("#song").val();
+var submitButton = $("#search-lyrics").val();
+
+
+
+
+
+$("#search-lyrics").on("click", function(){
+    userLyric();
+})
+
+function userLyric(userLyric){
+    var artistString = $("#artist").val().trim();
+    var songString = $("#song").val().trim();
+    var queryURL = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=" + artistString + "&song=" + songString;
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -19,15 +30,6 @@ function userArtist(userArtist){
  $("#article-section").append(info)
  $(info).attr("id", "swag")
 
- 
-//  //  $("#swag").append(JSON.stringify(artistName));
-//  var trackResponse = artistName.image[3]["#text"];
-//  $("#swag").append(trackResponse);
- 
-//  var imgElement = $("<img>");
-//  $(imgElement).attr("src", trackResponse);
-//  $(imgElement).attr("alt", "No image found artist");
-//  $("body").append(imgElement);
  
  
  }
