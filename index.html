@@ -12,54 +12,74 @@
   <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-          <!--Row For Searching-->
+         <!--Search Last F.M.-->
+    <div class="jumbotron text-center">
+            <!--Row For Searching-->
           <div class="row">
-          <div class="col-centered">
-          
-
-           <!--Data Card Bootstrap-->
-            <div class="card">
-            <div class="card-header">
-              <strong>
-                <i class="fa fa-search"></i>Find New Music</strong>
-            </div>
-            <div class="card-body">
+              <div class="col-centered">
               
-            <!-- Form to handle inputs -->
-            <form id="artist-form">
-
-            <!-- Label for Text Box -->
-            <div class="form-group">
-            <label for="artist-input"></label>
+    
+               <!--Data Card Bootstrap-->
+                <div class="card">
+                <div class="card-header">
+                  <strong>
+                    <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
+                </div>
+                <div class="card-body">
+                  
+                <!-- Form to handle inputs -->
+                <form id="artist-form">
+    
+                <!-- Label for Text Box -->
+                <div class="form-group">
+                <label for="artist-input"></label>
+                
+                <!-- Text Input Box -->
+                <input type="text" id="artist-input">
             
-            <!-- Text Input Box -->
-            <input type="text" id="artist-input">
-        
-            <!-- Submit Button -->
-            <input id="select-artist" type="submit" value="Search">
-            </form>
-          
-            <!-- Artist Information -->
-            <div id="artist-div"></div>
-                </div> 
+                <!-- Submit Button -->
+                <input id="select-artist" type="submit" value="Search">
+                </form>
+              
+                <!-- Artist Information -->
+                <div id="artist-div"></div>
+              </div> 
             </div>      
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
 
-            <!-- Results -->
+          
+        <div class="panel panel-default">
+            <div class="panel-body" id="results"><h5>Results:</h5>
+                        <div class="row">
+                    <div class="col-md-3" id="holder">
+                      <div class="toptrack">Destination</div>
+                </div>
+        </div>
+        
+
+            <!-- Youtube Videos -->
         <div class="card-header">
             <strong>
-              <i class="fa fa-table"></i> Lyrics</strong>
+              <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
           </div>
 
 
-          <!-- This main card will hold each of the resulting articles -->
-          <div class="card-body" id="article-section">
+          <!--This main card will hold each of the resulting articles-->
+          <div class="card-body"   id="article-section">
           </div>
 
           <div class="container" id="input-container">
@@ -70,7 +90,7 @@
               </div>
               <div class="form-group">
                 <label for="song"></label>
-                <input type="text" class="form-control" id="artist" placeholder="Song">
+                <input type="text" class="form-control" id="song" placeholder="Song">
               </div>
               <button type="submit" id="search-lyrics" class="btn btn-primary">
                 Submit
@@ -86,12 +106,11 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Link to Javascript -->
-  <!-- <script src="assets/javascript/script.js"></script> -->
+  <script src="assets/javascript/script.js"></script>
   <script src="assets/javascript/scriptTwo.js"></script>
   <script type="text/javascript">
     var cardDiv = $("<div>");
-    var 
-
+    
 
 
   </script>

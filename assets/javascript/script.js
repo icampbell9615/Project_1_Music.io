@@ -16,7 +16,7 @@ function userArtist(userArtist){
  var artistName = tracks[0];
  console.log(artistName);
  var info = $("<div>")
- $("#article-section").append(info)
+ $("#holder").append(info)
  $(info).attr("id", "swag")
 
  
@@ -42,9 +42,9 @@ function userArtist(userArtist){
 //  $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
 
 
-     
+  
    });
- }
+}
     
     
        
@@ -59,8 +59,16 @@ function userArtist(userArtist){
         // Storing the artist name
         var inputArtist = $("#artist-input").val().trim();
     
-        // Running the function(passing in the artist as an argument)
+      //Pass artist as argument
         userArtist(inputArtist);
-        
-      });
 
+       
+
+        
+  });
+
+        
+
+    
+
+      

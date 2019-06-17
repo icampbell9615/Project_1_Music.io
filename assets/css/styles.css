@@ -2,3 +2,52 @@
     float: none;
     margin: 0 auto;
 }
+
+.jumbotron {
+    background-color:  #1abc9c !important;
+  }
+
+.header {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #1abc9c;
+    font-size: 30px;
+  }
+
+
+.container-fluid {
+    padding: 60px 50px;
+  }
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 1500px}
+    
+
+
+
+
+
+/* Set black background color, white text and some padding */
+footer {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #555;
+  color: white;
+  padding: 30px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;} 
+  .footer {width: auto;}
+  .header {width: auto;}
+
+
+}
