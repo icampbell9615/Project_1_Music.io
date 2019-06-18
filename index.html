@@ -21,6 +21,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 </head>
 <body>
+    
          <!--Search Last F.M.-->
     <div class="jumbotron text-center">
             <!--Row For Searching-->
@@ -86,6 +87,10 @@
               <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
           </div>
 
+          <div id="player"></div>
+          
+          <div id="next" onClick="getNext();">Next</div>
+          
            <!-- Catch User Information For Video -->
           <div class="container" id="input-container">
             <form>
@@ -100,10 +105,16 @@
              <!-- Submit Button -->
              <input id="youtube-search" type="submit" value="Search &#127925">
           </form>
+
+         
+          
+          
         </main>
       </div>
     </div>
 
+
+ 
    
     <footer class="page-footer font-small teal pt-4"></footer>
     
@@ -112,7 +123,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Link to Javascript -->
   <script src="assets/javascript/script.js"></script>
-  <script src="assets/javascript/scriptTwo.js"></script>
+   <script src="assets/javascript/scriptTwo.js"></script> 
   <script type="text/javascript">
 
     

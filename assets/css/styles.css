@@ -10,7 +10,7 @@
     border-radius: 25px;
   }
 
- body { 
+ .body { 
     background-color:  #19FD95!important;
  }
 
@@ -27,9 +27,6 @@
     background-size: 300px;
     border-radius: 25px;
 }
-
-
-
 
 
 .panel-body{
@@ -59,14 +56,6 @@
   }
 
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {height: 1500px}
-    
-
-
-
-
-/* Set black background color, white text and some padding */
 footer {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -75,15 +64,13 @@ footer {
   padding: 100px;
 }
 
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
-  }
-  .row.content {height: auto;} 
-  .footer {width: auto;}
-  .header {width: auto;}
 
-
+#next{
+  height:50px;
+  width:100px;
+  background:orange;
+  display:block;
 }
+
+
+
