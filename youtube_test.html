@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
 </head>
 <body>
     <script>
-    // var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + $(inputVar).val() + "&key=AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc";
-    var api_key = "AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc"
+    var apiKey = "AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc"
     var clientId = "511419356056-ekaaurigboo1sd8m9kl9ustbilp6b547.apps.googleusercontent.com"
     
     var inputVar = $("<input>")
@@ -41,15 +43,18 @@
                 
                 for (var i = 0; i < responseArray.length; i++) {
                     var responseId = response.items[i].id.videoId;
-                    var linkButtons = $("<button>"); 
-                    $("body").append(linkButtons);
-                    linkButtons.attr("id", "clicky");
-                    linkButtons.attr("val", responseId);
-
+                        if (response.items[i].id.hasOwnProperty('videoId')) {
+                            var linkButtons = $("<button>"); 
+                            $("body").append(linkButtons);
+                            linkButtons.attr("id", "clicky");
+                            linkButtons.attr("val", responseId);
+                        }   
                     $(linkButtons).on("click", function(){
                         console.log($(this).attr("val"));
                         var id = $(this).attr("val");
-                        window.open("https://www.youtube.com/watch?v=" + id)
+                        // $("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+responseId  + "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+                        $("body").append($("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+responseId  + "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+                        // window.open("https://www.youtube.com/watch?v=" + id)
                     })
                 }
             
