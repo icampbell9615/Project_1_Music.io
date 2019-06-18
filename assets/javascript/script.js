@@ -9,40 +9,26 @@ function userArtist(userArtist){
     }).then(function(response) {
     
         var tracks = response.toptracks.track
+        
         console.log(response);
 
- // Constructing HTML containing the artist information
- for (var i = 0; i < 1; i++) {
- var artistName = tracks[0];
- console.log(artistName);
- var info = $("<div>")
- $("#holder").append(info)
- $(info).attr("id", "swag")
+for (var i = 0; i < 5; i++){
 
- 
-//  //  $("#swag").append(JSON.stringify(artistName));
-//  var trackResponse = artistName.image[3]["#text"];
-//  $("#swag").append(trackResponse);
- 
-//  var imgElement = $("<img>");
-//  $(imgElement).attr("src", trackResponse);
-//  $(imgElement).attr("alt", "No image found artist");
-//  $("body").append(imgElement);
- 
- 
- }
-//  var artistURL = $("<a>").attr("href", response.url).append(artistName);
-//  var artistImage = $("<img>").attr("src", response.thumb_url);
-//  var trackerCount = $("<h2>").text(response.tracker_count + "");
-//  var upcomingEvents = $("<h2>").text(response.upcoming_event_count + "");
-//  var goToArtist = $("<a>").attr("href", response.url).text("");
+    var topTracks = tracks[i].name;
+    console.log(topTracks);
+    var info = $("<div>")
 
- // Empty the contents of the artist-div, append the new artist content
-//  $("#artist-div").empty();
-//  $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+    $(info).append(JSON.stringify(topTracks))
+    $(info).attr("id", "swag")
+    $("#article-section").append(info)
+ delete(info);
+    
+}
 
 
-  
+
+
+
    });
 }
     
@@ -61,7 +47,9 @@ function userArtist(userArtist){
     
       //Pass artist as argument
         userArtist(inputArtist);
+      
 
+        
        
 
         
@@ -70,5 +58,3 @@ function userArtist(userArtist){
         
 
     
-
-      

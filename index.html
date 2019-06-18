@@ -12,15 +12,13 @@
   <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 </head>
 <body>
          <!--Search Last F.M.-->
@@ -29,9 +27,9 @@
           <div class="row">
               <div class="col-centered">
               
-    
+            
                <!--Data Card Bootstrap-->
-                <div class="card">
+                <div class="card text-white bg-dark mb-3">
                 <div class="card-header">
                   <strong>
                     <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
@@ -49,7 +47,7 @@
                 <input type="text" id="artist-input">
             
                 <!-- Submit Button -->
-                <input id="select-artist" type="submit" value="Search">
+                <input id="select-artist" type="submit" value="Search &#127925">
                 </form>
               
                 <!-- Artist Information -->
@@ -59,29 +57,36 @@
           </div>
         </div>
       </div>
-    </div>
-
-          
+     
+      <div class="col-md-3 col-xs-12">
+          <div class="flex-container">
         <div class="panel panel-default">
-            <div class="panel-body" id="results"><h5>Results:</h5>
-                        <div class="row">
-                    <div class="col-md-3" id="holder">
-                      <div class="toptrack">Destination</div>
-                </div>
-        </div>
+          
+            <div class="panel-body" id="results">
+              <div class="card-results-label" id="card-results-label">
+                  <strong>
+                      <i class="fa fa-results"></i>Top Five Tracks</strong>
+                       <!--This main card will hold each of the resulting articles-->
+          <div class="card-body"   id="article-section">
         
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  
 
+
+
+          <main>
             <!-- Youtube Videos -->
+        <div class="card text-white bg-dark mb-3">
         <div class="card-header">
             <strong>
               <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
           </div>
 
-
-          <!--This main card will hold each of the resulting articles-->
-          <div class="card-body"   id="article-section">
-          </div>
-
+           <!-- Catch User Information For Video -->
           <div class="container" id="input-container">
             <form>
               <div class="form-group">
@@ -92,16 +97,16 @@
                 <label for="song"></label>
                 <input type="text" class="form-control" id="song" placeholder="Song">
               </div>
-              <button type="submit" id="search-lyrics" class="btn btn-primary">
-                Submit
-              </button>
+             <!-- Submit Button -->
+             <input id="youtube-search" type="submit" value="Search &#127925">
+          </form>
+        </main>
+      </div>
+    </div>
 
-            
-            </form>
-          </div>
-        
-
-
+   
+    <footer class="page-footer font-small teal pt-4"></footer>
+    
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
@@ -109,7 +114,7 @@
   <script src="assets/javascript/script.js"></script>
   <script src="assets/javascript/scriptTwo.js"></script>
   <script type="text/javascript">
-    var cardDiv = $("<div>");
+
     
 
 
