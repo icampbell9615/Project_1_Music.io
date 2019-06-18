@@ -1,5 +1,63 @@
-var myPlaylist = ['DLPp2GicyY4','JGwWNGJdvx8','DLPp2GicyY4','JGwWNGJdvx8'];
-var myCurrentVideo = 0;
+function myCurrentSong(myCurrentSong) {
+var queryURL = "https://www.youtube.com/embed?listType=search&list=" + myCurrentSong;
+    
+
+    
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+  
+      var myCurrentSong = response.myCurrentSong.song
+      
+      console.log(response);
+
+for (var i = 0; i < 5; i++){
+
+  var topSong = myCurrentSong[i].name;
+  console.log(myCurrentSong);
+  var music = $("<div>")
+
+  $(music).append(JSON.stringify(topSong))
+  $(music).attr("id", "swag")
+  $("#next-song").append(music)
+delete(music);
+  
+}
+
+
+
+
+
+ });
+}
+  
+  
+     
+
+
+      // Event handler for user clicking the select-artist button
+    $("#youtube-search").on("click", function(event) {
+
+      // Preventing the button from trying to submit the form
+      event.preventDefault();
+
+      // Storing the artist name
+      var inputSong = $("#youtube-search").val().trim();
+  
+    //Pass artist as argument
+      myCurrentSong(inputSong);
+    
+
+      
+     
+
+      
+});
+
+      
+
+  
 
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -53,9 +111,9 @@ var myCurrentVideo = 0;
       }
 
       function getNext() {
-        player.loadVideoById(myPlaylist[myCurrentVideo +1]);
+        player.loadVideoById(myCurrentSong[myCurrentVideo +1]);
         myCurrentVideo++;
-        if(myCurrentVideo >= myPlaylist.length){
+        if(myCurrentVideo >= myCurrentSong.length){
           myCurrentVideo = -1;
         }
       }
