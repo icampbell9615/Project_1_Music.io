@@ -53,7 +53,10 @@
                         console.log($(this).attr("val"));
                         var id = $(this).attr("val");
                         // $("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+responseId  + "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
-                        $("body").append($("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+responseId  + "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+                        var crazy = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+                        crazy.attr("src", "https://www.youtube.com/embed/" + id)
+                        $("body").append(crazy)
+                        
                         // window.open("https://www.youtube.com/watch?v=" + id)
                     })
                 }
