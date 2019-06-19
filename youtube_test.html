@@ -12,6 +12,9 @@
 </head>
 <body>
     <script>
+$(document).ready(function(){
+
+
     var apiKey = "AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc"
     var clientId = "511419356056-ekaaurigboo1sd8m9kl9ustbilp6b547.apps.googleusercontent.com"
     
@@ -53,46 +56,40 @@
                         console.log($(this).attr("val"));
                         var id = $(this).attr("val");
                         // $("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+responseId  + "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
-                        var crazy = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
-                        crazy.attr("src", "https://www.youtube.com/embed/" + id)
-                        $("body").append(crazy)
+                        var crazy = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+                        crazy.attr("src", "https://www.youtube.com/embed/" + id);
+                        $("body").append(crazy);
                         
                         // window.open("https://www.youtube.com/watch?v=" + id)
-                    })
-                }
+                    });
+                };
             
             });
-        }
-    })
+        };
+    });
 
-    
-// function superSwag(){
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET" 
-//     }) .then(function(response){
-//         console.log(response)
-//         console.log(response.items[1].id.videoId);
-//         var responseArray = response.items;
-        
-//         for (var i = 0; i < responseArray.length; i++) {
-//             var responseId = response.items[i].id.videoId;
-//             var linkButtons = $("<button>"); 
-//             $("body").append(linkButtons);
-//             linkButtons.attr("id", "clicky");
-//             linkButtons.attr("val", responseId);
 
-//             $(linkButtons).on("click", function(){
-//                 console.log($(this).val())
-//                 var id = $(this).attr("val")
-//                 window.open("https://www.youtube.com/watch?v=" + id)
-//             })
-//         }
-    
-//     });
-// }
-    
-    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}) 
+ </script>
     
 </body>
 </html>
