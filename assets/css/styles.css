@@ -4,17 +4,10 @@
 }
 
 
-img {
+.img {
     z-index: 6;
-    position: ;
+   
     width:300px;
-}
-
-.q {
-    width:300px;    
-box-shadow:inset 0px 0px 85px red;
--webkit-box-shadow:inset 0px 0px 85px red;
--moz-box-shadow:inset 0px 0px 85px red;
 }
 
 .flex-container { 
@@ -22,7 +15,7 @@ box-shadow:inset 0px 0px 85px red;
 
    justify-content: center;
    
-  border: 100px solid black;
+  border: 100px ;
   margin: 1vh auto;
   border-radius: 1px;
   
@@ -39,8 +32,7 @@ box-shadow:inset 0px 0px 85px red;
   }
 
 .body { 
-     color: black;
-     background-color: black;
+ 
  }
 
 .card-body {
@@ -55,7 +47,7 @@ box-shadow:inset 0px 0px 85px red;
 
 
 .panel-body{
-    background-image: url(https://cdn.pixabay.com/photo/2017/08/06/03/17/headphones-2588235_1280.jpg);
+    background-image: url(https://www.solidbackgrounds.com/images/1024x768/1024x768-light-pastel-purple-solid-color-background.jpg);
     background-color: whitesmoke;
     text-align: center;
     padding: 70px;
@@ -86,3 +78,10 @@ box-shadow:inset 0px 0px 85px red;
 }
 
 
+@media (min-width: 575px) {
+    .flex-container {
+      width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
