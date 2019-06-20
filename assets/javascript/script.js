@@ -24,11 +24,6 @@ function userArtist(userArtist) {
             delete(info);
 
         }
-
-
-
-
-
     });
 }
 

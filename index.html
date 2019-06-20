@@ -15,26 +15,28 @@
 
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 
+</head>
+
+<body background="assets/images/Poly.jpg">
   
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-</head>
-
-<body>
 
 
-  <!--Search Last F.M.-->
-  <div class="jumbotron text-center">
-    <!--Row For Searching-->
+<div class="flex-container">
+
     <div class="row">
-      <div class="col-centered">
+        <div class="col-centered">
+  
+    <!--Search Last F.M.-->
+    <!--Row For Searching-->
+    
 
 
         <!--Data Card Bootstrap-->
@@ -50,6 +52,7 @@
 
               <!-- Label for Text Box -->
               <div class="form-group">
+
                 <label for="artist-input"></label>
 
                 <!-- Text Input Box -->
@@ -66,9 +69,14 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="col-md-3 col-xs-12">
-    <div class="flex-container">
+
+
+<div class="flex-container">
+ 
+    <div class="row">
+        <div class="col-centered"> 
       <div class="panel panel-default">
 
         <div class="panel-body" id="results">
@@ -77,26 +85,70 @@
               <i class="fa fa-results"></i>Top Five Tracks</strong>
             <!--This main card will hold each of the resulting articles-->
             <div class="card-body" id="article-section">
-
-            </div>
-          </div>
+          
+      
         </div>
       </div>
     </div>
-
-
-
-
-    <main>
-    </main>
   </div>
-  </div>
+</div>
 
+</div>
+</div>
+
+
+  
+
+<div class="row">
+    <div class="col-centered">
+<div class="flex-container">
+   
+<div class="q">
+    <img src="https://files.slack.com/files-pri/THCKMU1NG-FKNUE0A5A/logo.png" />
+</div>
+
+</div>
+    </div>
+</div>
+
+
+
+
+<div class="flex-container">
+    <div class="row">
+        <div class="col-centered">
+  <main>
+    <!-- Youtube Videos -->
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        <strong>
+          <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
+      </div>
+
+      <div id="player"></div>
+
+      <div id="next" onClick="getNext();">Next</div>
+
+      <!-- Catch User Information For Video -->
+      <div class="container" id="input-container">
+        <form>
+          <div class="form-group">
+            <label for="song"></label>
+            <input type="text" class="form-control" id="search" placeholder="Search">
+          </div>
+          <!-- Submit Button -->
+          <input id="youtube-search" type="submit" value="Search &#127925">
+        </form>
+  </main>
+
+
+</div>
+</div>
 
 
 
   <footer class="page-footer font-small teal pt-4"></footer>
-
+</div>
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
@@ -111,6 +163,4 @@
   </script>
 </body>
 
-
-  
 </html>

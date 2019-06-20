@@ -1,73 +1,88 @@
-.col-centered {
+.col-centered{
     float: none;
     margin: 0 auto;
-
 }
+
+
+img {
+    z-index: 6;
+    position: ;
+    width:300px;
+}
+
+.q {
+    width:300px;    
+box-shadow:inset 0px 0px 85px red;
+-webkit-box-shadow:inset 0px 0px 85px red;
+-moz-box-shadow:inset 0px 0px 85px red;
+}
+
+.flex-container { 
+   display: flex;
+
+   justify-content: center;
+   
+  border: 100px solid black;
+  margin: 1vh auto;
+  border-radius: 1px;
+  
+  overflow-y: auto;
+ 
+}
+
+
+
 
 .jumbotron {
-    background-color: #19FD95 !important;
-    flex: 1 1 auto;
-    border-radius: 25px;
-}
+    background-color:  #19FD95!important;
+    padding: 5rem;
+  }
 
-.body {
-    background-color: #19FD95 !important;
-}
+.body { 
+     color: black;
+     background-color: black;
+ }
 
 .card-body {
     text-align: center;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
     padding: 1.25rem;
     border-radius: 25px;
 }
 
 .card-results-label {
     background-color: whitesmoke;
-    background-size: 300px;
-    border-radius: 25px;
 }
 
 
-.panel-body {
+.panel-body{
     background-image: url(https://cdn.pixabay.com/photo/2017/08/06/03/17/headphones-2588235_1280.jpg);
-    background-size: flex;
     background-color: whitesmoke;
     text-align: center;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    border-radius: 25px;
-
-}
-
-.header {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    color: #1abc9c;
-    font-size: 30px;
+    padding: 70px;
+    border-radius: 30px;
 }
 
 
-.container-fluid {
-    padding: 60px 50px;
+.footer {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #555;
+  padding: 100px;
 }
 
 
-footer {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-color: #555;
-    color: white;
-    padding: 100px;
+#next{
+  height:50px;
+  width:100px;
+  background:orange;
+  display:block;
+}
+
+#player{
+   
+        width: 100%;
+        height: auto;
+   
 }
 
 
-#next {
-    height: 50px;
-    width: 100px;
-    background: orange;
-    display: block;
-}
