@@ -24,119 +24,110 @@
 </head>
 
 <body background="assets/images/Poly.jpg">
-  
 
 
 
 
-<div class="flex-container">
 
-  
+  <div class="flex-container">
+
+
     <!--Search Last F.M.-->
     <!--Row For Searching-->
-    
 
 
-        <!--Data Card Bootstrap-->
-        <div class="card text-white bg-dark mb-3">
-          <div class="card-header">
-            <strong>
-              <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
-          </div>
-          <div class="card-body">
 
-            <!-- Form to handle inputs -->
-            <form id="artist-form">
+    <!--Data Card Bootstrap-->
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        <strong>
+          <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
+      </div>
+      <div class="card-body">
 
-              <!-- Label for Text Box -->
-              <div class="form-group">
+        <!-- Form to handle inputs -->
+        <form id="artist-form">
 
-                <label for="artist-input"></label>
+          <!-- Label for Text Box -->
+          <div class="form-group">
 
-                <!-- Text Input Box -->
-                <input type="text" id="artist-input">
+            <label for="artist-input"></label>
 
-                <!-- Submit Button -->
-                <input id="select-artist" type="submit" value="Search &#127925">
-            </form>
+            <!-- Text Input Box -->
+            <input type="text" id="artist-input">
 
-            <!-- Artist Information -->
-            <div id="artist-div"></div>
-       
+            <!-- Submit Button -->
+            <input id="select-artist" type="submit" value="Search &#127925">
+        </form>
+
+        <!-- Artist Information -->
+        <div id="artist-div"></div>
+
       </div>
     </div>
   </div>
-</div>
+  </div>
 
 
 
-<div class="flex-container">
- 
-   
-      <div class="panel panel-default">
+  <div class="flex-container">
 
-        <div class="panel-body" id="results">
-          <div class="card-results-label" id="card-results-label">
-            <strong>
-              <i class="fa fa-results"></i>Top Five Tracks</strong>
-            <!--This main card will hold each of the resulting articles-->
-            <div class="card-body" id="article-section">
-          
-      
+
+    <div class="panel panel-default">
+
+      <div class="panel-body" id="results">
+        <div class="card-results-label" id="card-results-label">
+          <strong>
+            <i class="fa fa-results"></i>Top Five Tracks</strong>
+          <!--This main card will hold each of the resulting articles-->
+          <div class="card-body" id="article-section">
+
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+
+  <div class="flex-container">
+
+    <main>
+      <!-- Youtube Videos -->
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-header">
+          <strong>
+            <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
+        </div>
+
+        <div id="player"></div>
+
+        <div id="next" onClick="getNext();">Next</div>
+
+        <!-- Catch User Information For Video -->
+        <div class="container" id="input-container">
+          <form>
+            <div class="form-group">
+              <label for="song"></label>
+              <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+            <!-- Submit Button -->
+            <input id="youtube-search" type="submit" value="Search &#127925">
+          </form>
+    </main>
 
 
 
 
-  
-
-    
-
-
-
-
-<div class="flex-container">
-  
-  <main>
-    <!-- Youtube Videos -->
-    <div class="card text-white bg-dark mb-3">
-      <div class="card-header">
-        <strong>
-          <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
-      </div>
-
-      <div id="player"></div>
-
-      <div id="next" onClick="getNext();">Next</div>
-
-      <!-- Catch User Information For Video -->
-      <div class="container" id="input-container">
-        <form>
-          <div class="form-group">
-            <label for="song"></label>
-            <input type="text" class="form-control" id="search" placeholder="Search">
-          </div>
-          <!-- Submit Button -->
-          <input id="youtube-search" type="submit" value="Search &#127925">
-        </form>
-  </main>
-
-
-
-
-  <footer class="page-footer font-small teal pt-4"></footer>
-</div>
+    <footer class="page-footer font-small teal pt-4"></footer>
+  </div>
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Link to Javascript -->
   <script src="assets/javascript/script.js"></script>
   <script src="assets/javascript/scriptTwo.js"></script>
-  
+
 </body>
 
 </html>
