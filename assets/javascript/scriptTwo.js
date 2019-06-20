@@ -1,111 +1,90 @@
+var tracksArray = []
+$(document).ready(function(){
 
-function myCurrentSong(myCurrentSong) {
-    var queryURL = "https://www.youtube.com/embed?listType=search&list=" + myCurrentSong;
-
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-
-        var myCurrentSong = response.myCurrentSong.song
-
-        console.log(response);
-
-        for (var i = 0; i < 5; i++) {
-
-            var topSong = myCurrentSong[i].name;
-            console.log(myCurrentSong);
-            var music = $("<div>")
-
-            $(music).append(JSON.stringify(topSong))
-            $(music).attr("id", "swag")
-            $("#next-song").append(music)
-            delete(music);
-
-        }
-    });
-}
-
-// Event handler for user clicking the select-artist button
-$("#youtube-search").on("click", function (event) {
-
-    // Preventing the button from trying to submit the form
-    event.preventDefault();
-
-    // Storing the artist name
-    var inputSong = $("#youtube-search").val().trim();
-
-    //Pass artist as argument
-    myCurrentSong(inputSong);
-
-});
-
-
-
-
-var myPlaylist = ['DLPp2GicyY4','JGwWNGJdvx8','DLPp2GicyY4','JGwWNGJdvx8'];
-var myCurrentVideo = 0;
-
-
-// 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.'M7lc1UVf-VE',
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'DLPp2GicyY4',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        player.mute();
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      //var done = false;
-      function onPlayerStateChange(event) {
-        // if (event.data == YT.PlayerState.PLAYING && !done) {
-        //   setTimeout(stopVideo, 6000);
-        //   done = true;
-        // }
-        if(event.data === 0) {          
-              getNext();  
-        }
+    
+    
+    
+    function userArtist(userArtist) {
+        $("#artist-input").val("").attr("placeholder", "Search");
+        var tracksArray = [];
+        $("div").remove("#swag");
+        var APIKey = "6bd260e771ce2f1a6e020fe365f4537c";
+        var queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + userArtist + "&api_key=6bd260e771ce2f1a6e020fe365f4537c&format=json";
         
-        if(event.data === 2){
-          //alert('You paused video');
-          $('#myModal').modal('show');
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
+        
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            
+            var tracks = response.toptracks.track
+            
+            console.log(response);
+            
+            for (var i = 0; i < 5; i++) {
+                var topTracks = tracks[i].name;
+                console.log(topTracks);
+                tracksArray.push(topTracks)
+                console.log(tracksArray)
+                var info = $("<div>")
+                // info.append($("<button>").attr("class", "fm-yt-search"));
+                var infoButtons = $("<button>").attr("class", "fm-yt-search");
+                $(infoButtons).attr("trackname", topTracks);
+                info.append(infoButtons)
+                $(info).append(topTracks);
+                $(info).attr("id", "swag");
+                $("#results").append(info);
+                
+                
+            }; 
+            
+           $(".fm-yt-search").on("click", function(event){
+            event.preventDefault();
+            var inputVar = $.trim($(this).attr("trackname"));
+            console.log(inputVar)
 
-      function getNext() {
-        player.loadVideoById(myPlaylist[myCurrentVideo +1]);
-        myCurrentVideo++;
-        if(myCurrentVideo >= myPlaylist.length){
-          myCurrentVideo = -1;
-        }
-      }
-
-// function01 = function(){
-//   player.stopVideo();
-// }
+            var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + inputVar + "&key=AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc";
+            youtube(queryURL);
+            
+            
+            
+            function youtube(url) {
+                $("#the-video").remove();
+                $.ajax({
+                    url: url,
+                    method: "GET" 
+                }) .then(function(response){
+                    console.log(response)
+                    
+                    var responseId = response.items[0].id.videoId
+                    var crazy = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+                    crazy.attr("id", "the-video");
+                    crazy.attr("class", "iframe")
+                    crazy.attr("src", "https://www.youtube.com/embed/" + responseId);
+                    
+                    $("#player").append(crazy);
+                });
+            };
+        })
+            
+            
+            
+        });
+    }
+    
+    // Event handler for user clicking the select-artist button
+    $("#select-artist").on("click", function (event) {
+        
+        // Preventing the button from trying to submit the form
+        event.preventDefault();
+        
+        // Storing the artist name
+        var inputArtist = $("#artist-input").val().trim();
+        
+        //Pass artist as argument
+        userArtist(inputArtist);
+        
+        
+    });
+    
+})
