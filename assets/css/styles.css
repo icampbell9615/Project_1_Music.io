@@ -10,19 +10,12 @@ img {
     width:300px;
 }
 
-.q {
-    width:300px;    
-box-shadow:inset 0px 0px 85px red;
--webkit-box-shadow:inset 0px 0px 85px red;
--moz-box-shadow:inset 0px 0px 85px red;
-}
-
 .flex-container { 
    display: flex;
 
    justify-content: center;
    
-  border: 100px solid black;
+  border: 100px ;
   margin: 1vh auto;
   border-radius: 1px;
   
@@ -86,3 +79,10 @@ box-shadow:inset 0px 0px 85px red;
 }
 
 
+@media (min-width: 575px) {
+    .flex-container {
+      width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
