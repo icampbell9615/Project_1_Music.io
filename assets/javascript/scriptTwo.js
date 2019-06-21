@@ -34,12 +34,16 @@ $(document).ready(function () {
                 $(info).append(topTracks);
                 $(info).attr("id", "swag");
                 $("#results").append(info);
-
-
+                
+                // console.log(thisIndex);
+                
+                
             };
-
+               
+            
             $(".fm-yt-search").on("click", function (event) {
                 event.preventDefault();
+                
                 var inputVar = $.trim($(this).attr("trackname"));
                 console.log(inputVar)
 
