@@ -15,102 +15,106 @@
 
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
-
-  
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
 </head>
 
-<body>
+<body background="assets/images/Poly.jpg">
 
 
-  <!--Search Last F.M.-->
-  <div class="jumbotron text-center">
-    <!--Row For Searching-->
-    <div class="row">
-      <div class="col-centered">
+  <div class="flex-container">
+    <!--Search Last F.M.-->
+    <!--Data Card Bootstrap-->
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        <strong>
+          <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
+      </div>
+      <div class="card-body">
+
+        <!-- Form to handle inputs -->
+        <form id="artist-form">
+
+          <!-- Label for Text Box -->
+          <div class="form-group">
+
+            <label for="artist-input"></label>
+
+            <!-- Text Input Box -->
+            <input type="text" id="artist-input">
+
+            <!-- Submit Button -->
+            <input id="select-artist" type="submit" value="Search &#127925">
+        </form>
+
+        <!-- Artist Information -->
+        <div id="artist-div"></div>
+
+       </div>
+    </div>
+  </div>
+</div>
 
 
-        <!--Data Card Bootstrap-->
-        <div class="card text-white bg-dark mb-3">
-          <div class="card-header">
-            <strong>
-              <i class="fa fa-search"></i>Find Top Tracks Of Artist</strong>
-          </div>
-          <div class="card-body">
 
-            <!-- Form to handle inputs -->
-            <form id="artist-form">
+  <div class="flex-container">
+    <div class="panel panel-default">
+      <div class="panel-body" id="results">
+        <div class="card-results-label" id="card-results-label">
+          <strong>
+            <i class="fa fa-results"></i>Top Five Tracks</strong>
+          <!--This main card will hold each of the resulting articles-->
+          <div class="card-body" id="article-section">
 
-              <!-- Label for Text Box -->
-              <div class="form-group">
-                <label for="artist-input"></label>
-
-                <!-- Text Input Box -->
-                <input type="text" id="artist-input">
-
-                <!-- Submit Button -->
-                <input id="select-artist" type="submit" value="Search &#127925">
-            </form>
-
-            <!-- Artist Information -->
-            <div id="artist-div"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="col-md-3 col-xs-12">
-    <div class="flex-container">
-      <div class="panel panel-default">
 
-        <div class="panel-body" id="results">
-          <div class="card-results-label" id="card-results-label">
-            <strong>
-              <i class="fa fa-results"></i>Top Five Tracks</strong>
-            <!--This main card will hold each of the resulting articles-->
-            <div class="card-body" id="article-section">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
+  <div class="flex-container">
 
     <main>
+      <!-- Youtube Videos -->
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-header">
+          <strong>
+            <i class="fa fa-table"></i> Youtube Videos Of Artist </strong>
+        </div>
+      
+        <div id="player"></div>
+
+       
+
+        <!-- Catch User Information For Video -->
+        <div class="container" id="input-container">
+          <form>
+            <div class="form-group">
+              <label for="song"></label>
+              <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+            <!-- Submit Button -->
+            <input id="youtube-search" type="submit" value="Search &#127925">
+          </form>
     </main>
+
+
+
+
+    <footer class="page-footer font-small teal pt-4"></footer>
   </div>
-  </div>
-
-
-
-
-  <footer class="page-footer font-small teal pt-4"></footer>
-
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Link to Javascript -->
   <script src="assets/javascript/script.js"></script>
   <script src="assets/javascript/scriptTwo.js"></script>
-  <script type="text/javascript">
 
-
-
-
-  </script>
 </body>
 
-
-  
 </html>
