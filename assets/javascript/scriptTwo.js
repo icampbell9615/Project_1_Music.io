@@ -1,9 +1,6 @@
 var tracksArray = []
 $(document).ready(function () {
 
-
-
-
     function userArtist(userArtist) {
         $("#artist-input").val("").attr("placeholder", "Search");
         var tracksArray = [];
@@ -40,7 +37,6 @@ $(document).ready(function () {
                 
             };
                
-            
             $(".fm-yt-search").on("click", function (event) {
                 event.preventDefault();
                 
@@ -49,8 +45,6 @@ $(document).ready(function () {
 
                 var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + inputVar + "&key=AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc";
                 youtube(queryURL);
-
-
 
                 function youtube(url) {
                     $("#the-video").remove();
@@ -70,7 +64,6 @@ $(document).ready(function () {
                     });
                 };
             })
-
 
 
         });
