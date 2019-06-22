@@ -3,16 +3,12 @@ $(document).ready(function () {
     var apiKey = "AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc"
     var clientId = "511419356056-ekaaurigboo1sd8m9kl9ustbilp6b547.apps.googleusercontent.com"
 
-
-
     $("#youtube-search").on("click", function (event) {
         event.preventDefault();
         var inputVar = $("#search");
         console.log(inputVar.val().trim())
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + inputVar.val().trim() + "&key=AIzaSyDYKIHRcJf1-jAmUGEYxfFzc3diC7EMZAc";
         youtube(queryURL);
-
-
 
     });
 
@@ -37,19 +33,10 @@ $(document).ready(function () {
                     }
                 }
 
-
-
             };
 
         });
     };
-
-    
-
-
-
-
-
 
 
 })

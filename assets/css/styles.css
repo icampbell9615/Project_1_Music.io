@@ -6,24 +6,17 @@
 
 .img {
     z-index: 6;
-
     width: 300px;
 }
 
 .flex-container {
     display: flex;
-
     justify-content: center;
-
     border: 100px;
     margin: 1vh auto;
     border-radius: 1px;
-
     overflow-y: auto;
-
 }
-
-
 
 
 .jumbotron {
@@ -66,10 +59,8 @@
 
 
 #player {
-
     width: 100%;
     height: auto;
-
 }
 
 
