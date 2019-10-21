@@ -1,4 +1,4 @@
-Top Five Music App
+<h1>Top Five Music App</h1>
 <br>
 Group project created with HTML, CSS, and Javascript using the Youtube and Last F.M. API to retrieve the top five tracks of an artist searched.  
 <br>
