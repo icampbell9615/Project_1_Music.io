@@ -1,3 +1,7 @@
+Top Five Music App
+<br>
+Group project created with HTML, CSS, and Javascript using the Youtube and Last F.M. API to retrieve the top five tracks of an artist searched.  
+<br>
 When entering your artist and pressing the search button you will find the top five tracks of the artist and then a video with them once selected from the results menu or the search bar below.
 
 
